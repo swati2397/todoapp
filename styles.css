@@ -1,0 +1,120 @@
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+body {
+    font-family: cursive;
+    background: url('imgaes/mainbg.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+}
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    background-color: #ffe4c4a1;
+    /* border: 3px solid #5a5afc; */
+    position: relative;
+    min-height: 300px;
+}
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -40px;
+    width: 100px;
+    height: 100px;
+    background: url('imgaes/img1.webp') no-repeat center/contain;
+    animation: bounce 1s infinite;
+}
+.anime-girl {
+    position: absolute;
+    bottom: -50px;
+    right: -150px;
+    width: 190px;
+    height: 190px;
+    background: url('imgaes/woman.png') no-repeat center/contain;
+    background-size: contain;
+    animation: bounce 1.5s infinite;
+}
+@media (max-width: 500px) {
+    .anime-girl {
+        width: 80px;
+        height: 80px;
+        right: -30px;
+        bottom: -30px;
+    }
+}
+h2 {
+    color: #5a5afc;
+    font-size: 26px;
+    animation: bounce 1s infinite;
+}
+input {
+    width: 90%;
+    padding: 10px;
+    border: 2px solid #5a5afc;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+button {
+    background: #019d01;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 18px;
+}
+.task-container {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 5px;
+    border-radius: 5px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    background: #49F4E0;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    flex-wrap: wrap;
+}
+.done {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+.edit, .delete {
+    background: #ff0000d0;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+.edit {
+    background: green;
+}
